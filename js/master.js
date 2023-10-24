@@ -68,6 +68,7 @@ createApp({
     },
     mounted() {
         console.log("VUE WORKA");
+// INTERVAL ID E' DICHIARATA IN MOUNTED
         this.intervalID = setInterval(() => {
             this.nextImage()
           }, 3000)
