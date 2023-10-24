@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-slider</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css'
+    integrity='sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=='
+    crossorigin='anonymous' referrerpolicy='no-referrer' />
+    <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div id='app'>
+        <h1 class="title">{{ images.title }}</h1>
+
+        <div class="container">
+            <div class="card movie">
+                <img :src="images.image[currentIndex]" alt="Game-Silde">
+                <div class="thumbnails">
+                    <figure class="thumb" :class="currentIndex === index ? 'active' : ''"
+                        v-for="(image, index) in images.image" @click="changeImage(index)">
+                        <img :src="image" alt="">
+                    </figure>
+                </div>
+                <div class="navigator">
+                    <div class="prev" @click="prevImage('prev')">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </div>
+                    <div class="next" @click="nextImage()">
+                        <i class="fa-solid fa-chevron-right">
+                        </i>
+                    </div>
+                </div>
+                <div class="details">
+                    <h3 class="title">{{ images.title }}</h3>
+                    <div>Description: {{ images.text }}</div>
+                    <small>Length: {{ images.length }} min.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="./js/master.js"></script> -->
+</body>
+</html> 
