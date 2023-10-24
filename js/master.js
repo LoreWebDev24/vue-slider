@@ -4,7 +4,7 @@ createApp({
     data() {
         return {
             currentIndex: 0,
-            images : [
+            games : [
                 {
                     image: 'img/01.webp',
                     title: "Marvel's Spiderman Miles Morales",
@@ -41,14 +41,14 @@ createApp({
     methods: {
         nextImage() {
             this.currentIndex++;
-            if (this.currentIndex > this.images.length - 1) {
+            if (this.currentIndex > this.games.length - 1) {
                 this.currentIndex = 0;
             }
         },
         prevImage() {
             this.currentIndex--;
             if (this.currentIndex < 0) {
-                this.currentIndex = this.images.length - 1;
+                this.currentIndex = this.games.length - 1;
             }
         },
         changeImage(thumbIndex) {
@@ -59,3 +59,4 @@ createApp({
         console.log("VUE WORKA");
     }
 }).mount('#app');
+

@@ -5,7 +5,11 @@
   }
   
   img {
-    max-width: 100%;
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio:21/21;
+
   }
   
   .title {
@@ -31,7 +35,7 @@
     position: relative;
   }
   
-  .movie .details {
+  .game .details {
     text-align: center;
     padding: 1rem;
   }
