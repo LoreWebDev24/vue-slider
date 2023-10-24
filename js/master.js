@@ -57,6 +57,9 @@ createApp({
     },
     mounted() {
         console.log("VUE WORKA");
+        this.startInterval = setInterval(() => {
+            return this.nextImage()
+          }, 3000)
     }
 }).mount('#app');
 
