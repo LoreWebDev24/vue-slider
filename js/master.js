@@ -53,12 +53,23 @@ createApp({
         },
         changeImage(thumbIndex) {
             this.currentIndex = thumbIndex;
+        },
+        stopCarousel() {
+            clearInterval(this.intervalID)
+	        this.intervalID = null 
+        },
+        restartCarousel() {
+            if (!this.intervalID) {
+                this.intervalID = setInterval(() => {
+                    this.nextImage()
+                  }, 3000)
+            }
         }
     },
     mounted() {
         console.log("VUE WORKA");
-        this.startInterval = setInterval(() => {
-            return this.nextImage()
+        this.intervalID = setInterval(() => {
+            this.nextImage()
           }, 3000)
     }
 }).mount('#app');

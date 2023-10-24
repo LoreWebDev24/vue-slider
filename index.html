@@ -15,7 +15,7 @@
         <h1 class="title">{{ games[currentIndex].title }}</h1>
 
         <div class="container">
-            <div class="card game">
+            <div @mouseover="stopCarousel" @mouseleave="restartCarousel" class="card game">
                 <img :src="games[currentIndex].image" alt="Game-Silde">
                 <div class="thumbnails">
                     <figure class="thumb" :class="currentIndex === index ? 'active' : ''"

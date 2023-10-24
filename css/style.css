@@ -5,7 +5,10 @@
   }
 
   body {
+    padding: 100px;
     background-color: #ababab;
+    min-width: 500px;
+    overflow-x: scroll;
   }
   
   img {
